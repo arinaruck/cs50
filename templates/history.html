@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class = "table">
+        <table>
+            <caption> Your transaction history </caption>
+            <div class = "heading">
+                <tr>
+                    <th> Action </th>
+                    <td class="space"></td>
+                    <th> Symbol </th>
+                    <td class="space"></td>
+                    <th> Number of shares </th> 
+                    <td class="space"></td>
+                    <th> Price </th>
+                    <td class="space"></td>
+                    <th> Date </th>
+                    <td class="space"></td>
+                    <th> Total </th>
+                </tr>    
+            </div>    
+            <div class = "contents">
+            {% for j in range(i-1,-1, -1) %}
+                <tr>
+                    <td> {{stocks[j].action}} </td>
+                    <td class="space"></td>
+                    <td> {{stocks[j].symbol}} </td>
+                    <td class="space"></td>
+                    <td> {{stocks[j].shares}} </td>
+                    <td class="space"></td>
+                    <td> {{stocks[j].price}} </td>
+                    <td class="space"></td>
+                    <td> {{stocks[j].time}} </td>
+                    <td class="space"></td>
+                    <td> {{info[j]}} </td>
+                <tr>
+                <tr class ="space"> 
+                </tr>
+            {% endfor %}
+        </table>
+    </div>    
+{% endblock %}
