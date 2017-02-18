@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('quote') }}" method="post">
+        <fieldset>
+            <div class="question">
+            <p> Enter the symbol of the stock the cost you woud like to check: </p>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Stock name" type="text"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Check cost</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

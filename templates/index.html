@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div class = "table">
+        <table>
+            <caption> Your current situation </caption>
+            <div class = "heading">
+                <tr>
+                    <th> Stock name </th>
+                    <td class="space"></td>
+                    <th> Symbol </th>
+                    <td class="space"></td>
+                    <th> Number of shares </th> 
+                    <td class="space"></td>
+                    <th> Current Price </th>
+                    <td class="space"></td>
+                    <th> Total </th>
+                </tr>    
+            </div>    
+            <div class = "contents">
+            {% for j in range(i) %}
+                <tr>
+                    <td> {{info[j].name}} </td>
+                    <td class="space"></td>
+                    <td> {{shares[j].symbol}} </td>
+                    <td class="space"></td>
+                    <td> {{shares[j].shares}} </td>
+                    <td class="space"></td>
+                    <td> {{info[j].price}} </td>
+                    <td class="space"></td>
+                    <td> {{total[j]}} </td>
+                <tr>
+            {% endfor %}
+        </table>
+        <p> </p>
+        <p> </p>
+        <p> </p>
+        <table>
+            <tr>
+                <td class = "left" > CASH: </td>
+                <td class = "right" > {{cash}} </td> 
+            </tr>
+            <p> </p>
+            <tr>
+                <td class = "left" > GRAND TOTAL: </td>
+                <td class = "right"> {{summ}} </td>
+            </tr>
+        </table>
+    </div>    
+{% endblock %}
